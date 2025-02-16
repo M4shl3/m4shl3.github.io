@@ -1,5 +1,11 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 3334 3334">
-  <g transform="scale(1,-1) translate(0,-3334)" fill="black">
+<svg version="1.0" xmlns="http://www.w3.org/2000/svg"
+    width="50.000000pt" height="50.000000pt" viewBox="0 0 3334 3334"
+    preserveAspectRatio="xMidYMid meet">
+  
+  <!-- White background -->
+  <rect width="100%" height="100%" fill="white"/>
+
+  <g transform="translate(0,3334) scale(0.1,-0.1)" fill="black">
     <path d="M0 16675V0h33330v16675H0zm17170 6393V11937h-1084c-158 0-272 121-298 316-6 34-10 498-10 1131v1072h1617c1564 0 1620 0 1671-20 115-41 219-154 242-263 8-38 10-922 8-3287l-3-3235c-5-112-112-195-282-217-78-14-5353-15-5440-1-117 19-217 92-277 202l-34 63-3 2143-2 2142h1084c765 0 1101 3 1138 11 158 34 272 155 298 316 6 34 10 498 10 1131v1072zm1429-45V936l-930 9c0 31 181 219 941 976zm-1529-9535V0h-375v2355h375z"/>
   </g>
 </svg>
