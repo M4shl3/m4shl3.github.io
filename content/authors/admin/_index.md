@@ -1,6 +1,6 @@
 ---
 # Display name
-title: m4shl3
+title: M4shl3
 
 # Name pronunciation (optional)
 name_pronunciation: Ahmed Mahmoud Fathy
@@ -10,8 +10,9 @@ first_name: M4shl3
 last_name: 
 
 # Status emoji
-status:
+status: 
   icon: 
+
 
 # Is this the primary user of the site?
 superuser: true
@@ -33,10 +34,10 @@ profiles:
     url: https://x.com/M4shl3184043
   - icon: brands/linkedin
     url: https://www.linkedin.com/in/m4shl3/
-  - icon: custom/blog
-    url: https://hackmd.io/@M4shl3
   - icon: brands/github
     url: https://github.com/M4shl3
+  - icon: custom/blog
+    url: https://hackmd.io/@M4shl3
   # Link to a PDF of your resume/CV - upload it to `static/uploads/resume.pdf`
 ---
 
