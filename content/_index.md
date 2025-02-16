@@ -16,7 +16,7 @@ sections:
       username: admin
     design:
       biography:
-        style: 'text-align: justify; font-size: 0.1em;'
+        style: 'text-align: justify; font-size: 0.8em;'
 
   - block: cta-button-list  # Kept the block in case it's required by the theme, but removed buttons
 
