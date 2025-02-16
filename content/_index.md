@@ -17,13 +17,10 @@ sections:
     design:
       biography:
         style: 'text-align: justify; font-size: 0.8em;'
-  - block: cta-button-list
-    content:
-      # Need a custom icon?
-      # Add an SVG image to the `assets/media/icons/` folder and reference it in the `icon` field below
-    blocks:
+
+  - block: cta-button-list  # Kept the block in case it's required by the theme, but removed buttons
+
   - type: text
     content:
       text: "Welcome to my site!"
-
 ---
