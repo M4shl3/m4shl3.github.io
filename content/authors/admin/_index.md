@@ -39,4 +39,4 @@ profiles:
     label: Download my resume
 ---
 
-I’m a Cybersecurity Specialist with a strong focus on digital forensics and incident response. My expertise spans Windows forensics, mobile forensics (Android & iOS), malware analysis, data recovery, and Linux forensics. Passionate about uncovering digital evidence and strengthening cybersecurity, I thrive on solving complex forensic challenges and advancing incident response strategies.
+Cybersecurity Specialist with expertise in digital forensics and incident response. My skills cover Windows and Linux forensics, mobile forensics (Android & iOS), malware analysis, and data recovery. Passionate about uncovering digital evidence and enhancing security, I specialize in solving complex forensic challenges and refining incident response strategies.
