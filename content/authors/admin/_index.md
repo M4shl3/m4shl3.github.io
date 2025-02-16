@@ -34,7 +34,7 @@ profiles:
     url: https://x.com/M4shl3184043
   - icon: brands/linkedin
     url: https://linkedin.com/m4shl3
-  - icon: media/blog
+  - icon: icons/blog
     url: https://hackmd.io/@M4shl3
   # Link to a PDF of your resume/CV - upload it to `static/uploads/resume.pdf`
   - icon: academicons/cv
