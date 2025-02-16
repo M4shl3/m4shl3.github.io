@@ -10,6 +10,8 @@ appearance:
   color: blue
   favicon: "media/icon_hu4166356570829923896.png"
 
+disableThemeBranding: true
+showThemeAttribution: false
 
 
 # Site header
