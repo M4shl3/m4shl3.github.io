@@ -28,13 +28,12 @@ organizations:
 # Need to use another icon? Simply download the SVG icon to your `assets/media/icons/` folder.
 profiles:
   - icon: at-symbol
-    url: 'ahmedelsalkh627@gmail.com'
-    onclick: 'showEmailPopup()'
+    url: 'mailto:ahmedelsalkh627@gmail.com'
   - icon: brands/x
     url: https://x.com/M4shl3184043
   - icon: brands/linkedin
     url: https://www.linkedin.com/in/m4shl3/
-  - icon: custom/blogg
+  - icon: custom/blog
     url: https://hackmd.io/@M4shl3
   # Link to a PDF of your resume/CV - upload it to `static/uploads/resume.pdf`
 ---
