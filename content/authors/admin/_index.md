@@ -6,8 +6,8 @@ title: m4shl3
 name_pronunciation: Ahmed Mahmoud Fathy
 
 # Full name (for SEO)
-first_name: Ahmed
-last_name: Mahmoud
+first_name: m4shl3
+last_name: 
 
 # Status emoji
 status:
