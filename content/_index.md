@@ -23,11 +23,8 @@ sections:
       # Add an SVG image to the `assets/media/icons/` folder and reference it in the `icon` field below
       buttons:
         - text: Read my latest Blogs
-          icon: academicons/arxiv
+          icon: brands/hackmd
           url: https://hackmd.io/@M4shl3
-        - text: Watch my new YouTube video to achieve 20x productivity
-          icon: brands/youtube
-          url: https://youtube.com
         - text: Connect with me on LinkedIn
           icon: brands/linkedin
           url: https://linkedin.com/in/m4shl3
