@@ -16,11 +16,11 @@ sections:
       username: admin
     design:
       biography:
-        style: 'text-align: justify; font-size: 0.8em;'
+        style: 'text-align: justify; font-size: 0.1em;'
 
   - block: cta-button-list  # Kept the block in case it's required by the theme, but removed buttons
 
   - type: text
     content:
-      text: "Welcome to my site!"
+      text: ""
 ---
