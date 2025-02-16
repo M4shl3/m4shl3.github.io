@@ -34,9 +34,6 @@ profiles:
   - icon: custom/blogg
     url: https://hackmd.io/@M4shl3
   # Link to a PDF of your resume/CV - upload it to `static/uploads/resume.pdf`
-  - icon: academicons/cv
-    url: uploads/resume.pdf
-    label: Download my resume
 ---
 
 Cybersecurity Specialist with expertise in digital forensics and incident response. My skills cover Windows and Linux forensics, mobile forensics (Android & iOS), malware analysis, and data recovery. Passionate about uncovering digital evidence and enhancing security, I specialize in solving complex forensic challenges and refining incident response strategies.
