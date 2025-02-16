@@ -46,3 +46,7 @@ security:
   _merge: deep
 sitemap:
   _merge: deep
+
+params:
+  favicon: "/static/favicon.ico"
+
