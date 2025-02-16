@@ -1,6 +1,7 @@
 
 title: M4shl3  # Website name
-
+params:
+  favicon: "/static/favicon.ico"
 
 ############################
 ## LANGUAGE
@@ -47,6 +48,4 @@ security:
 sitemap:
   _merge: deep
 
-params:
-  favicon: "/static/favicon.ico"
 
