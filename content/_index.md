@@ -23,6 +23,4 @@ sections:
   - type: text
     content:
       text: ""
-  - block: cta-button-list
-    content: []
 ---
