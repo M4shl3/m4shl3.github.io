@@ -21,11 +21,4 @@ sections:
     content:
       # Need a custom icon?
       # Add an SVG image to the `assets/media/icons/` folder and reference it in the `icon` field below
-      buttons:
-        - text: Read my latest Blogs
-          icon: brands/hackmd
-          url: https://hackmd.io/@M4shl3
-        - text: Connect with me on LinkedIn
-          icon: brands/linkedin
-          url: https://linkedin.com/in/m4shl3
 ---
