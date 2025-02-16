@@ -19,9 +19,10 @@ sections:
         style: 'text-align: justify; font-size: 0.8em;'
 
   - block: cta-button-list  # Kept the block in case it's required by the theme, but removed buttons
-  - block: cta-button-list
-    content: []
+
   - type: text
     content:
       text: ""
+  - block: cta-button-list
+    content: []
 ---
