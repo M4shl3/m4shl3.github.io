@@ -7,20 +7,30 @@
   <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-  <header>
-      <div class="container">
-          <div class="logo">
-              <span class="logo__mark">>#</span>
-              <a href="index.html" class="logo__text">cd /home/m4shl3<span class="logo__cursor"></span></a>
-          </div>
-          <nav class="menu">
-              <ul>
-                  <li><a href="about.html">About</a></li>
-                  <li><a href="labs.html">Labs</a></li>
-              </ul>
-          </nav>
-      </div>
-  </header>
+
+
+	<header>
+	  <div class="container">
+		<!-- Terminal-style logo -->
+		<div class="logo-terminal" style="position: relative;">
+		  <span class="terminal-arrow">➜</span>
+		  <span class="terminal-path">~ cd /home/m4shl3/about</span>
+		  <span class="terminal-cursor"></span>
+		  <!-- Hidden clickable overlay -->
+		  <a href="index.html" class="terminal-link"></a>
+		</div>
+
+		<!-- Navigation menu -->
+		<nav class="menu">
+		  <ul>
+			<li><a href="about.html">About</a></li>
+			<li><a href="labs.html" class="active">Labs</a></li>
+		  </ul>
+		</nav>
+	  </div>
+	</header>
+
+  
 
 <main>
   <div class="container">
@@ -45,3 +55,4 @@
   </footer>
 </body>
 </html>
+
