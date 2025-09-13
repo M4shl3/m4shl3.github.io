@@ -307,3 +307,92 @@ footer {
   transform: translateY(-12px) scale(1.3);
   filter: drop-shadow(0 4px 8px rgba(0, 0, 0, 0.6));
 }
+
+
+
+
+
+
+
+
+
+/* Terminal-style logo */
+.logo-terminal {
+    display: flex;
+    align-items: center;
+    font-family: 'Menlo', 'Courier New', monospace;
+    font-size: 16px;
+    position: relative; /* needed for overlay */
+    cursor: default;
+}
+
+/* macOS-style prompt arrow */
+.terminal-arrow {
+    color: #00ff00; /* green like mac terminal */
+    font-weight: bold;
+    margin-right: 6px;
+}
+
+/* Command path */
+.terminal-path {
+    color: #ffffff;
+}
+
+/* Blinking cursor */
+.terminal-cursor {
+    display: inline-block;
+    width: 8px;
+    height: 1em;
+    background-color: #ffffff;
+    margin-left: 2px;
+    animation: blink 1s step-start infinite;
+}
+
+/* Blinking animation */
+@keyframes blink {
+    0%, 50% { opacity: 1; }
+    51%, 100% { opacity: 0; }
+}
+
+/* Hidden clickable overlay for the terminal prompt */
+.terminal-link {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 5;           /* above text but below menu */
+    background: transparent;
+    cursor: pointer;
+}
+
+/* Navigation menu */
+.menu {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    margin-left: auto;
+}
+
+.menu ul {
+    list-style: none;
+    display: flex;
+    margin: 0;
+    padding: 0;
+}
+
+.menu li {
+    margin-left: 20px;
+}
+
+.menu a {
+    color: #ffffff;
+    text-decoration: none;
+    font-size: 14px;
+    font-weight: bold;
+}
+
+.menu a:hover {
+    text-decoration: underline;
+}
+
