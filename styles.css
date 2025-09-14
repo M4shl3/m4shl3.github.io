@@ -70,12 +70,13 @@ header {
 /* Header image */
 .nmap-eye {
   position: absolute;
-  top: 10px;
-  left: 50px;
-  width: 40px;
-  height: auto;
-  margin: 0;
+  top: 10px;      /* adjust vertical position */
+  left: 30px;     /* adjust horizontal position */
+  width: 100px;   /* increase width */
+  height: auto;   /* keep aspect ratio */
+  z-index: 0;     /* behind terminal, if needed */
 }
+
 
 /* Navigation menu */
 .menu {
@@ -395,4 +396,5 @@ footer {
 .menu a:hover {
     text-decoration: underline;
 }
+
 
