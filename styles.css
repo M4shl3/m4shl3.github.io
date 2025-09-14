@@ -277,6 +277,7 @@ footer {
 
 /* Dock-style taskbar */
 .dock {
+  position: relative;
   display: flex;
   justify-content: center;
   align-items: flex-end;
@@ -285,8 +286,22 @@ footer {
   background: rgba(20, 20, 20, 0.9);
   border-radius: 20px;
   width: fit-content;
-  margin: 40px auto; /* center horizontally */
+  margin: 40px auto;
   box-shadow: 0 6px 20px rgba(0, 0, 0, 0.6);
+  overflow: visible;
+}
+
+/* Thin static light border along the edges */
+.dock::before {
+  content: '';
+  position: absolute;
+  top: 0; left: 0; right: 0; bottom: 0;
+  border-radius: 20px;       /* match dock corners */
+  border: 2px solid lime;    /* thin line around edges */
+  box-shadow: 0 0 8px lime;  /* subtle neon glow */
+  pointer-events: none;
+  z-index: 1;
+  background: transparent;    /* ensure center stays transparent */
 }
 
 .dock a svg {
@@ -294,11 +309,11 @@ footer {
   cursor: pointer;
 }
 
-/* Hover effect: raise and enlarge */
 .dock a:hover svg {
   transform: translateY(-12px) scale(1.3);
   filter: drop-shadow(0 4px 8px rgba(0, 0, 0, 0.6));
 }
+
 
 
 
@@ -387,4 +402,5 @@ footer {
 .menu a:hover {
     text-decoration: underline;
 }
+
 
