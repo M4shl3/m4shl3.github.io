@@ -67,7 +67,6 @@ header {
   100% { opacity: 1; }
 }
 
-/* Header image */
 .nmap-eye {
   position: absolute;
   top: 10px;      /* adjust vertical position */
@@ -76,6 +75,7 @@ header {
   height: auto;   /* keep aspect ratio */
   z-index: 0;     /* behind terminal, if needed */
 }
+
 
 
 /* Navigation menu */
@@ -396,5 +396,3 @@ footer {
 .menu a:hover {
     text-decoration: underline;
 }
-
-
