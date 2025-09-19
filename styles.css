@@ -250,6 +250,19 @@ footer {
 }
 
 
+/* Green neon border around lab PNGs */
+.lab-card::before {
+  content: '';
+  position: absolute;
+  top: 0; left: 0; right: 0; bottom: 0;
+  border-radius: 12px;       /* match .lab-card corners */
+  border: 2px solid lime;    /* thin lime border */
+  box-shadow: 0 0 8px lime;  /* subtle neon glow */
+  pointer-events: none;      /* allow clicks through */
+  z-index: 2;                /* sit above the image */
+}
+
+
 
 
 
@@ -409,6 +422,7 @@ footer {
 .menu a:hover {
     text-decoration: underline;
 }
+
 
 
 
