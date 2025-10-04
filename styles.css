@@ -409,6 +409,7 @@ footer {
 
 
 /*-------------------------------------------------------------------------------------------------------------*/
+/* Scrolling Rope */
 
 
 .back-to-top {
@@ -429,9 +430,10 @@ footer {
   height: 100%;
   background: url(https://m4shl3.github.io/labs/scroll.png) no-repeat center top;
   background-size: contain;
+  animation: ropeFloat 3s ease-in-out infinite; /* vertical floating motion */
 }
 
-/* Glowing neon border hugging the rope */
+/* Neon glow effect around the rope */
 .back-to-top .rope-glow::before {
   content: '';
   position: absolute;
@@ -447,7 +449,14 @@ footer {
   animation: glowPulse 2s ease-in-out infinite alternate;
 }
 
-/* Smooth neon pulsing animation */
+/* Vertical floating animation */
+@keyframes ropeFloat {
+  0% { transform: translateY(0); }
+  50% { transform: translateY(-10px); }
+  100% { transform: translateY(0); }
+}
+
+/* Glowing pulse effect */
 @keyframes glowPulse {
   from {
     box-shadow:
@@ -463,13 +472,13 @@ footer {
   }
 }
 
-/* Slide down when visible */
+/* When the user scrolls down, show the rope */
 .back-to-top.show {
   top: 0;
 }
 
-/* Hover lift effect */
+/* Hover effect for feedback */
 .back-to-top:hover .rope-glow {
-  transform: translateY(-6px);
-  transition: transform 0.3s ease;
+  transform: translateY(-15px) scale(1.03);
+  transition: transform 0.4s ease;
 }
