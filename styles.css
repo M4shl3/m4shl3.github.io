@@ -410,7 +410,10 @@ footer {
 
 /*-------------------------------------------------------------------------------------------------------------*/
 
-/* Scrolling Rope with Thin Stable Green Glow (No Glow on Cat) */
+
+
+
+/* Scrolling Rope with Thin Stable Green Glow (No Glow on Cat, No Hover Change) */
 
 .back-to-top {
   cursor: pointer;
@@ -425,27 +428,24 @@ footer {
   animation: ropeFloat 3s ease-in-out infinite;
 }
 
-/* Main rope image with thin green glow (tight to edges) */
+/* Main rope image with thin, constant green glow */
 .back-to-top::after {
   content: '';
   position: absolute;
   inset: 0;
   background: url(https://raw.githubusercontent.com/M4shl3/m4shl3.github.io/main/scroll.gif) no-repeat center top;
   background-size: contain;
-
-  /* Thin and sharp glow — reduced blur radius */
   filter:
     drop-shadow(0 0 1.5px rgba(0, 255, 0, 0.9))
     drop-shadow(0 0 3px rgba(0, 255, 0, 0.6));
-
   z-index: 2;
   pointer-events: none;
 
-  /* Mask out the bottom 15% (the cat tail) */
+  /* Remove glow from cat section */
   clip-path: polygon(0 0, 100% 0, 100% 85%, 0 85%);
 }
 
-/* Green outline layer with subtle color definition (no cat zone) */
+/* Subtle inner color definition (rope only, no cat) */
 .back-to-top::before {
   content: '';
   position: absolute;
@@ -466,11 +466,11 @@ footer {
   z-index: 1;
   pointer-events: none;
 
-  /* Hide the bottom cat section */
+  /* Hide the cat portion */
   clip-path: polygon(0 0, 100% 0, 100% 85%, 0 85%);
 }
 
-/* Vertical floating animation (rope movement only) */
+/* Vertical floating animation */
 @keyframes ropeFloat {
   0% { transform: translateY(0); }
   50% { transform: translateY(-12px); }
@@ -482,28 +482,18 @@ footer {
   top: 0;
 }
 
-/* Hover effect — slight lift and stronger glow */
+/* Hover effect — only movement, no light change */
 .back-to-top:hover {
   transform: translateY(-15px) scale(1.03);
   transition: transform 0.4s ease;
 }
 
-.back-to-top:hover::after {
+/* Keep glow unchanged on hover */
+.back-to-top:hover::after,
+.back-to-top:hover::before {
   filter:
-    drop-shadow(0 0 2px rgba(0, 255, 0, 1))
-    drop-shadow(0 0 4px rgba(0, 255, 0, 0.8));
+    drop-shadow(0 0 1.5px rgba(0, 255, 0, 0.9))
+    drop-shadow(0 0 3px rgba(0, 255, 0, 0.6));
+  opacity: 0.5;
 }
 
-.back-to-top:hover::before {
-  opacity: 0.7;
-  filter:
-    brightness(0)
-    saturate(100%)
-    invert(48%)
-    sepia(79%)
-    saturate(2476%)
-    hue-rotate(86deg)
-    brightness(118%)
-    contrast(119%)
-    blur(1.5px);
-}
