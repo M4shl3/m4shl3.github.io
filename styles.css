@@ -442,22 +442,54 @@ footer {
 
 
 
+
+/* Scroll rope container */
 .back-to-top {
-  cursor: pointer;
   position: fixed;
   right: 80px;
-  top: -900px; /* hidden off-screen */
+  top: -600px;                /* start hidden above screen */
   z-index: 1000;
   width: 70px;
-  height: 90px;
-  background: url(https://m4shl3.github.io/scroll.gif) no-repeat center center;
-  background-size: contain;
+  height: 600px;
+  cursor: pointer;
   transition: top 0.8s ease-in-out;
 }
 
-.back-to-top.show {
-  top: 100px; /* slides down when scrolling */
+/* Rope image with neon border */
+.back-to-top .rope-glow {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  background: url(https://m4shl3.github.io/labs/scroll.png) no-repeat center top;
+  background-size: contain;
+  border-radius: 10px;          /* optional rounded corners */
 }
+
+/* Add glowing green border effect */
+.back-to-top .rope-glow::before {
+  content: '';
+  position: absolute;
+  top: 0; left: 0; right: 0; bottom: 0;
+  border: 2px solid lime;
+  border-radius: 10px;
+  box-shadow: 0 0 12px lime, 0 0 25px limegreen;
+  pointer-events: none;
+  z-index: 2;
+  background: transparent;
+  opacity: 0.7; /* tweak intensity */
+}
+
+/* When visible: slide down */
+.back-to-top.show {
+  top: 0; /* or adjust to 50px if you want a gap from top */
+}
+
+/* Optional: slight hover motion */
+.back-to-top:hover .rope-glow {
+  transform: translateY(-5px);
+  transition: transform 0.3s ease;
+}
+
 
 
 
