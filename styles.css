@@ -68,7 +68,6 @@ header {
 }
 
 
-
 /* Navigation menu */
 .menu {
   display: flex;
@@ -497,4 +496,5 @@ footer {
     drop-shadow(0 0 3px rgba(0, 255, 0, 0.6));
   opacity: 0.5;
 }
+
 
