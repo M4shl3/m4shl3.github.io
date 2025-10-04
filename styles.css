@@ -442,24 +442,22 @@ footer {
 
 
 
-
 .back-to-top {
   cursor: pointer;
   position: fixed;
   right: 80px;
-  top: -900px; /* hidden above screen */
+  top: -900px; /* hidden off-screen */
   z-index: 1000;
   width: 70px;
-  height: 90px; /* typo fix: should be 90px not 900px, otherwise huge */
-  background: url(https://blog-static.cnblogs.com/files/fsh001/scroll.gif) no-repeat center center;
+  height: 90px;
+  background: url(https://m4shl3.github.io/scroll.gif) no-repeat center center;
   background-size: contain;
-  transition: all .5s ease-in-out;
-  opacity: 1;
+  transition: top 0.8s ease-in-out;
 }
 
-/* When visible, bring it into view */
 .back-to-top.show {
-  top: 80%; /* adjust as needed */
+  top: 100px; /* slides down when scrolling */
 }
+
 
 
