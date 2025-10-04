@@ -411,11 +411,10 @@ footer {
 /*-------------------------------------------------------------------------------------------------------------*/
 /* Scrolling Rope */
 
-
 .back-to-top {
   position: fixed;
   right: 80px;
-  top: -600px; /* hidden initially */
+  top: -600px;
   z-index: 1000;
   width: 70px;
   height: 600px;
@@ -423,29 +422,29 @@ footer {
   transition: top 0.8s ease-in-out;
 }
 
-/* Rope image */
 .back-to-top .rope-glow {
   position: relative;
   width: 100%;
   height: 100%;
   background: url(https://m4shl3.github.io/labs/scroll.png) no-repeat center top;
   background-size: contain;
-  animation: ropeFloat 3s ease-in-out infinite; /* vertical floating motion */
+  animation: ropeFloat 3s ease-in-out infinite;
 }
 
-/* Neon glow effect around the rope */
+/* ✅ Subtle, thin green glow outlining the rope */
 .back-to-top .rope-glow::before {
   content: '';
   position: absolute;
   inset: 0;
-  border-radius: 8px;
+  border-radius: 6px;
+  border: 1px solid rgba(0, 255, 0, 0.7);  /* thin green line */
   box-shadow:
-    0 0 10px 2px rgba(0, 255, 0, 0.8),
-    0 0 20px 6px rgba(0, 255, 0, 0.5),
-    0 0 40px 12px rgba(0, 255, 0, 0.3);
+    0 0 6px rgba(0, 255, 0, 0.5),
+    0 0 12px rgba(0, 255, 0, 0.3);
   pointer-events: none;
   z-index: 2;
-  opacity: 0.9;
+  opacity: 0.8;
+  background: transparent;
   animation: glowPulse 2s ease-in-out infinite alternate;
 }
 
@@ -456,28 +455,26 @@ footer {
   100% { transform: translateY(0); }
 }
 
-/* Glowing pulse effect */
+/* Gentle pulsing glow */
 @keyframes glowPulse {
   from {
     box-shadow:
-      0 0 6px 1px rgba(0, 255, 0, 0.6),
-      0 0 15px 4px rgba(0, 255, 0, 0.4),
-      0 0 25px 8px rgba(0, 255, 0, 0.2);
+      0 0 4px rgba(0, 255, 0, 0.4),
+      0 0 10px rgba(0, 255, 0, 0.3);
   }
   to {
     box-shadow:
-      0 0 15px 3px rgba(0, 255, 0, 0.9),
-      0 0 30px 10px rgba(0, 255, 0, 0.7),
-      0 0 50px 20px rgba(0, 255, 0, 0.5);
+      0 0 8px rgba(0, 255, 0, 0.6),
+      0 0 16px rgba(0, 255, 0, 0.4);
   }
 }
 
-/* When the user scrolls down, show the rope */
+/* Show when scrolled */
 .back-to-top.show {
   top: 0;
 }
 
-/* Hover effect for feedback */
+/* Hover effect */
 .back-to-top:hover .rope-glow {
   transform: translateY(-15px) scale(1.03);
   transition: transform 0.4s ease;
