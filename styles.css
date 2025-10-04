@@ -429,3 +429,51 @@ footer {
   pointer-events: none;      /* allow clicks through */
   z-index: 2;                /* sit above the image */
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* Scroll-to-top button styles */
+.back-to-top {
+  position: fixed;
+  bottom: 40px;
+  right: 40px;
+  width: 50px;
+  height: 50px;
+  background: #333;
+  color: #fff;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 22px;
+  cursor: pointer;
+  transition: opacity 0.3s, visibility 0.3s;
+  opacity: 0;
+  visibility: hidden;
+  z-index: 1000;
+}
+
+/* When visible */
+.back-to-top.show {
+  opacity: 1;
+  visibility: visible;
+}
+
+/* Optional hover effect */
+.back-to-top:hover {
+  background: #555;
+}
+
+
