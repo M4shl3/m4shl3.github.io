@@ -410,10 +410,7 @@ footer {
 
 /*-------------------------------------------------------------------------------------------------------------*/
 
-
-
-
-/* Scrolling Rope with Thin Stable Green Glow (No Glow on Cat, No Hover Change) */
+/* Scrolling Rope with Thin Stable Green Glow (Rope Only, Cat Visible) */
 
 .back-to-top {
   cursor: pointer;
@@ -426,9 +423,13 @@ footer {
   transition: top 0.8s ease-in-out;
   opacity: 1;
   animation: ropeFloat 3s ease-in-out infinite;
+
+  /* Base rope+cat image — visible normally */
+  background: url(https://raw.githubusercontent.com/M4shl3/m4shl3.github.io/main/scroll.gif) no-repeat center top;
+  background-size: contain;
 }
 
-/* Main rope image with thin, constant green glow */
+/* Thin stable green glow — rope only, no cat */
 .back-to-top::after {
   content: '';
   position: absolute;
@@ -441,11 +442,11 @@ footer {
   z-index: 2;
   pointer-events: none;
 
-  /* Remove glow from cat section */
+  /* Only glow on the rope part — hide cat */
   clip-path: polygon(0 0, 100% 0, 100% 85%, 0 85%);
 }
 
-/* Subtle inner color definition (rope only, no cat) */
+/* Subtle inner color definition (rope glow only) */
 .back-to-top::before {
   content: '';
   position: absolute;
@@ -466,11 +467,11 @@ footer {
   z-index: 1;
   pointer-events: none;
 
-  /* Hide the cat portion */
+  /* Mask bottom cat part out */
   clip-path: polygon(0 0, 100% 0, 100% 85%, 0 85%);
 }
 
-/* Vertical floating animation */
+/* Rope floating animation */
 @keyframes ropeFloat {
   0% { transform: translateY(0); }
   50% { transform: translateY(-12px); }
