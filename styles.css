@@ -247,11 +247,6 @@ footer {
   box-shadow: 0 -4px 6px rgba(0, 0, 0, 0.5);
 }
 
-
-
-
-
-
 .difficulty-hard {
   color: red;
   font-weight: bold;
@@ -268,14 +263,7 @@ footer {
 }
 
 
-
-
-
-
-
-
-
-
+/*-------------------------------------------------------------------------------------------------------------*/
 
 
 .dock {
@@ -317,17 +305,7 @@ footer {
 }
 
 
-
-
-
-
-
-
-
-
-
-
-
+/*-------------------------------------------------------------------------------------------------------------*/
 
 
 /* Terminal-style logo */
@@ -411,9 +389,7 @@ footer {
 }
 
 
-
-
-
+/*-------------------------------------------------------------------------------------------------------------*/
 
 
 
@@ -432,22 +408,13 @@ footer {
 
 
 
+/*-------------------------------------------------------------------------------------------------------------*/
 
 
-
-
-
-
-
-
-
-
-
-/* Scroll rope container */
 .back-to-top {
   position: fixed;
   right: 80px;
-  top: -600px;                /* start hidden above screen */
+  top: -600px; /* hidden initially */
   z-index: 1000;
   width: 70px;
   height: 600px;
@@ -455,41 +422,54 @@ footer {
   transition: top 0.8s ease-in-out;
 }
 
-/* Rope image with neon border */
+/* Rope image */
 .back-to-top .rope-glow {
   position: relative;
   width: 100%;
   height: 100%;
   background: url(https://m4shl3.github.io/labs/scroll.png) no-repeat center top;
   background-size: contain;
-  border-radius: 10px;          /* optional rounded corners */
 }
 
-/* Add glowing green border effect */
+/* Glowing neon border hugging the rope */
 .back-to-top .rope-glow::before {
   content: '';
   position: absolute;
-  top: 0; left: 0; right: 0; bottom: 0;
-  border: 2px solid lime;
-  border-radius: 10px;
-  box-shadow: 0 0 12px lime, 0 0 25px limegreen;
+  inset: 0;
+  border-radius: 8px;
+  box-shadow:
+    0 0 10px 2px rgba(0, 255, 0, 0.8),
+    0 0 20px 6px rgba(0, 255, 0, 0.5),
+    0 0 40px 12px rgba(0, 255, 0, 0.3);
   pointer-events: none;
   z-index: 2;
-  background: transparent;
-  opacity: 0.7; /* tweak intensity */
+  opacity: 0.9;
+  animation: glowPulse 2s ease-in-out infinite alternate;
 }
 
-/* When visible: slide down */
+/* Smooth neon pulsing animation */
+@keyframes glowPulse {
+  from {
+    box-shadow:
+      0 0 6px 1px rgba(0, 255, 0, 0.6),
+      0 0 15px 4px rgba(0, 255, 0, 0.4),
+      0 0 25px 8px rgba(0, 255, 0, 0.2);
+  }
+  to {
+    box-shadow:
+      0 0 15px 3px rgba(0, 255, 0, 0.9),
+      0 0 30px 10px rgba(0, 255, 0, 0.7),
+      0 0 50px 20px rgba(0, 255, 0, 0.5);
+  }
+}
+
+/* Slide down when visible */
 .back-to-top.show {
-  top: 0; /* or adjust to 50px if you want a gap from top */
+  top: 0;
 }
 
-/* Optional: slight hover motion */
+/* Hover lift effect */
 .back-to-top:hover .rope-glow {
-  transform: translateY(-5px);
+  transform: translateY(-6px);
   transition: transform 0.3s ease;
 }
-
-
-
-
