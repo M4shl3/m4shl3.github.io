@@ -111,21 +111,22 @@
   </footer>
 
   <!-- Scroll to Top Button -->
-  <div id="back-to-top" class="back-to-top">↑</div>
+  <div id="back-to-top" class="back-to-top"></div>
 
   <script>
+    const backToTop = document.getElementById("back-to-top");
+
     // Show button when scrolled down 300px
     window.addEventListener("scroll", function () {
-      const button = document.getElementById("back-to-top");
       if (window.scrollY > 300) {
-        button.classList.add("show");
+        backToTop.classList.add("show");
       } else {
-        button.classList.remove("show");
+        backToTop.classList.remove("show");
       }
     });
 
     // Smooth scroll to top on click
-    document.getElementById("back-to-top").addEventListener("click", function () {
+    backToTop.addEventListener("click", function () {
       window.scrollTo({
         top: 0,
         behavior: "smooth"
@@ -133,10 +134,10 @@
     });
   </script>
 
-
 	
 </body>
 </html>
+
 
 
 
