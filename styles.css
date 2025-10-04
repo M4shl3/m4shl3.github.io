@@ -411,12 +411,14 @@ footer {
 /*-------------------------------------------------------------------------------------------------------------*/
 /* Scrolling Rope */
 
+/* Scrolling Rope */
+
 .back-to-top {
   position: fixed;
   right: 80px;
   top: -600px;
   z-index: 1000;
-  width: 70px;
+  width: 90px; /* Increased width for better visibility */
   height: 600px;
   cursor: pointer;
   transition: top 0.8s ease-in-out;
@@ -431,41 +433,46 @@ footer {
   animation: ropeFloat 3s ease-in-out infinite;
 }
 
-/* ✅ Subtle, thin green glow outlining the rope */
+/* ✅ Green glowing border similar to labs style */
 .back-to-top .rope-glow::before {
   content: '';
   position: absolute;
   inset: 0;
-  border-radius: 6px;
-  border: 1px solid rgba(0, 255, 0, 0.7);  /* thin green line */
+  border-radius: 8px;
+  border: 2px solid rgba(0, 255, 0, 0.8);  /* Bright green border */
   box-shadow:
-    0 0 6px rgba(0, 255, 0, 0.5),
-    0 0 12px rgba(0, 255, 0, 0.3);
+    0 0 8px rgba(0, 255, 0, 0.6),
+    0 0 16px rgba(0, 255, 0, 0.4),
+    0 0 24px rgba(0, 255, 0, 0.2);
   pointer-events: none;
   z-index: 2;
-  opacity: 0.8;
+  opacity: 0.9;
   background: transparent;
   animation: glowPulse 2s ease-in-out infinite alternate;
 }
 
-/* Vertical floating animation */
+/* Vertical floating animation - rope moves up and down */
 @keyframes ropeFloat {
   0% { transform: translateY(0); }
-  50% { transform: translateY(-10px); }
+  50% { transform: translateY(-15px); }
   100% { transform: translateY(0); }
 }
 
-/* Gentle pulsing glow */
+/* Gentle pulsing glow effect */
 @keyframes glowPulse {
   from {
+    border-color: rgba(0, 255, 0, 0.7);
     box-shadow:
-      0 0 4px rgba(0, 255, 0, 0.4),
-      0 0 10px rgba(0, 255, 0, 0.3);
+      0 0 6px rgba(0, 255, 0, 0.5),
+      0 0 12px rgba(0, 255, 0, 0.3),
+      0 0 20px rgba(0, 255, 0, 0.2);
   }
   to {
+    border-color: rgba(0, 255, 0, 1);
     box-shadow:
-      0 0 8px rgba(0, 255, 0, 0.6),
-      0 0 16px rgba(0, 255, 0, 0.4);
+      0 0 10px rgba(0, 255, 0, 0.7),
+      0 0 20px rgba(0, 255, 0, 0.5),
+      0 0 30px rgba(0, 255, 0, 0.3);
   }
 }
 
@@ -474,11 +481,8 @@ footer {
   top: 0;
 }
 
-/* Hover effect */
+/* Hover effect - rope pulls up more */
 .back-to-top:hover .rope-glow {
-  transform: translateY(-15px) scale(1.03);
+  transform: translateY(-20px) scale(1.05);
   transition: transform 0.4s ease;
 }
-
-
-
