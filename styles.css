@@ -489,3 +489,74 @@ footer {
     drop-shadow(0 0 3px rgba(0, 255, 0, 0.6));
   opacity: 0.5;
 }
+
+
+
+
+
+
+/* ==========================================
+   Labs Platform Section — Unified Styling
+   ========================================== */
+
+.labs-section {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background-color: #000;
+  padding: 25px 0; /* increased spacing for visual balance */
+}
+
+.labs-platform {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 50px; /* space between logo and labs grid */
+}
+
+.labs-logo {
+  width: 280px;
+  height: auto;
+  display: block;
+  margin: 0 auto;
+  transition: transform 0.3s ease, filter 0.3s ease;
+}
+
+/* Unified hover glow (matches your theme) */
+.labs-logo:hover {
+  transform: scale(1.05);
+  filter: drop-shadow(0 0 16px rgba(0, 255, 255, 0.6));
+}
+
+/* Grid spacing refinement (keeps your cards neat) */
+.labs-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  gap: 25px;
+  justify-content: center;
+  width: 100%;
+  max-width: 1200px;
+}
+
+/* Visual separator between platform groups */
+.labs-section:not(:last-of-type)::after {
+  content: "";
+  display: block;
+  width: 60%;
+  height: 1px;
+  background: linear-gradient(to right, transparent, rgba(0, 255, 255, 0.3), transparent);
+  margin-top: 80px;
+}
+
+/* Distinct brand accent for each platform */
+.labs-section:nth-of-type(1) .labs-logo {
+  filter: drop-shadow(0 0 10px rgba(0, 153, 255, 0.5)); /* CyberDefenders – blue glow */
+}
+.labs-section:nth-of-type(2) .labs-logo {
+  filter: drop-shadow(0 0 10px rgba(0, 255, 255, 0.5)); /* Security Blue Team – cyan glow */
+}
+.labs-section:nth-of-type(3) .labs-logo {
+  filter: drop-shadow(0 0 10px rgba(0, 255, 0, 0.5)); /* HackTheBox – green glow */
+}
+
