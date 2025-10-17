@@ -406,73 +406,62 @@ footer {
 
 /*-------------------------------------------------------------------------------------------------------------*/
 
-/* Back to Top — Neon Lime Glow (White Glyph Version) */
+/* Back to Top — Clean Neon Lime Square (No Pulse) */
 .back-to-top-btn {
   position: fixed;
-  bottom: 90px; /* raised above footer/title */
-  right: 40px;
-  width: 60px;
-  height: 60px;
-  border-radius: 50%;
-  border: 2px solid lime; /* neon lime border */
-  background: rgba(0, 255, 0, 0.05); /* subtle green tint */
+  bottom: 75px;
+  right: 30px;
+  width: 38px;
+  height: 38px;
+  border-radius: 5px; /* slight rounding for smooth neon edges */
+  border: 2px solid lime;
+  background: rgba(0, 255, 0, 0.05);
   box-shadow:
-    0 0 8px lime,       /* outer neon glow */
-    inset 0 0 6px lime; /* inner glow */
-  color: #ffffff; /* ⬅️ white arrow glyph */
-  font-size: 28px;
+    0 0 6px lime,
+    inset 0 0 4px lime;
+  color: #ffffff; /* white caret glyph */
+  font-size: 18px;
   font-weight: bold;
   cursor: pointer;
   opacity: 0;
   visibility: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
   transition:
     opacity 0.4s ease,
     transform 0.3s ease,
-    box-shadow 0.3s ease,
-    bottom 0.4s ease;
+    box-shadow 0.3s ease;
   z-index: 1000;
 }
 
-/* Hover — enhance glow */
+/* Hover — brighter neon */
 @media (hover: hover) {
   .back-to-top-btn:hover {
     transform: scale(1.1);
     box-shadow:
-      0 0 16px lime,
-      inset 0 0 10px lime;
+      0 0 12px lime,
+      inset 0 0 6px lime;
   }
 }
 
-/* Visible when scrolled down */
+/* Show when scrolled down */
 .back-to-top-btn.show {
   opacity: 1;
   visibility: visible;
 }
 
-/* Subtle breathing glow animation */
-@keyframes neonPulse {
-  0%, 100% {
-    box-shadow: 0 0 8px lime, inset 0 0 6px lime;
-  }
-  50% {
-    box-shadow: 0 0 14px lime, inset 0 0 10px lime;
-  }
-}
-
-.back-to-top-btn {
-  animation: neonPulse 2.5s infinite ease-in-out;
-}
-
-/* Responsive (mobile-friendly) */
+/* Mobile adjustments */
 @media (max-width: 768px) {
   .back-to-top-btn {
-    width: 50px;
-    height: 50px;
-    bottom: 70px;
-    right: 25px;
-    font-size: 22px;
+    width: 34px;
+    height: 34px;
+    bottom: 65px;
+    right: 20px;
+    font-size: 16px;
   }
 }
+
 
 
 /*-------------------------------------------------------------------------------------------------------------*/
@@ -532,6 +521,7 @@ footer {
   background: linear-gradient(to right, transparent, rgba(0, 255, 255, 0.3), transparent);
   margin-top: 80px;
 }
+
 
 
 
