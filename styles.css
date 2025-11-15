@@ -197,30 +197,51 @@ p {
 }
 
 /* Labs grid */
-.labs-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
-  gap: 20px;
+.lab-card-upper {
+  position: relative;
+  overflow: hidden;
+  border-radius: 12px;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.6);
+  transition: transform 0.3s ease;
+  aspect-ratio: 4 / 3;
+  background: linear-gradient(135deg, #1a1a2e 0%, #16213e 100%);
 }
 
+.lab-card-upper img {
+  width: 100%;
+  height: 100%;
+  display: block;
+  border-radius: 12px;
+  object-fit: cover;
+}
+
+.lab-card-upper:hover {
+  transform: scale(1.02);
+}
+
+/* Lower Section Cards - Original format */
 .lab-card {
   position: relative;
   overflow: hidden;
   border-radius: 12px;
   box-shadow: 0 4px 8px rgba(0,0,0,0.6);
   transition: transform 0.3s ease;
+  aspect-ratio: 5 / 3;
+  background: #000;
 }
 
 .lab-card img {
   width: 100%;
-  height: auto;
+  height: 100%;
   display: block;
   border-radius: 12px;
+  object-fit: contain;
 }
 
 .lab-card:hover {
   transform: scale(1.02);
 }
+
 
 /* Caption (bottom trail) */
 .lab-caption {
@@ -521,6 +542,7 @@ footer {
   background: linear-gradient(to right, transparent, rgba(0, 255, 255, 0.3), transparent);
   margin-top: 80px;
 }
+
 
 
 
