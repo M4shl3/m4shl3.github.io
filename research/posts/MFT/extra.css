@@ -1,0 +1,96 @@
+/* Remove the left sidebar */
+.md-sidebar--primary {
+    display: none !important;
+}
+
+/* Center-align content and expand width */
+.md-main {
+    margin: 0 auto;
+    max-width: 100%; /* Expand content to fill the page */
+    padding: 20px;
+}
+
+/* Remove the navbar */
+.md-header {
+    display: none !important;
+}
+
+/* Page background and text color adjustments */
+body {
+    background-color: #000 !important; /* Dark background to match site */
+    color: #fff !important; /* Text color to match site */
+}
+
+/* Remove the footer */
+.md-footer {
+    display: none !important;
+}
+
+
+}
+
+/* Table styling */
+.md-typeset table {
+    background-color: #111 !important; /* Dark table background */
+    color: #fff !important; /* Light text */
+    border: 1px solid lime !important; /* Light border */
+}
+
+.md-typeset table th, .md-typeset table td {
+    border: 1px solid lime !important; /* Border between cells */
+    padding: 8px; /* Add some padding */
+}
+
+
+
+/* General padding and spacing adjustments for a cleaner look */
+.md-typeset {
+    line-height: 1.6; /* Improve readability */
+    padding: 20px; /* Add padding around content */
+}
+
+
+
+
+/* Table of contents styling */
+.md-sidebar--secondary .md-nav__title {
+    background-color: #000 !important; /* Match the site background color */
+    color: #fff !important; /* Keep the text color consistent */
+	box-shadow: none !important; /* Remove any shadow */
+}
+/* Adjust the padding and spacing for cleaner alignment */
+.md-sidebar--secondary .md-nav__title {
+    padding: 0 !important; /* Remove extra padding */
+    margin-bottom: 10px; /* Add a little space below the title */
+}
+
+/* Table of contents styling */
+.md-sidebar--secondary .md-nav__title {
+    background-color: #000 !important; /* Match the site background color */
+    color: #fff !important; /* Keep the text color consistent */
+	box-shadow: none !important; /* Remove any shadow */
+}
+/* Adjust the padding and spacing for cleaner alignment */
+.md-sidebar--secondary .md-nav__title {
+    padding: 0 !important; /* Remove extra padding */
+    margin-bottom: 10px; /* Add a little space below the title */
+}
+
+
+.md-nav__link--active,
+.md-nav__item--active > .md-nav__link {
+    color: #00ff00 !important;
+    font-weight: bold;
+    text-shadow: 0 0 6px rgba(0, 255, 0, 0.6);
+}
+
+/* aria-current (used by Material during scroll) */
+.md-nav__link[aria-current="true"] {
+    color: #00ff00 !important;
+    text-shadow: 0 0 6px rgba(0, 255, 0, 0.6);
+}
+
+/* Optional: subtle left indicator glow */
+.md-nav__item--active {
+    border-left: 2px solid lime;
+}
