@@ -168,17 +168,28 @@ p {
 /* Social links */
 .social-links {
   margin-top: 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 20px;
 }
 
 .social-links a {
-  margin: 0 10px;
+  width: 44px;
+  height: 44px;
   color: #ffffff;
   text-decoration: none;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 .social-links svg {
-  vertical-align: middle;
+  width: 32px;
+  height: 32px;
 }
+
 
 /* Badge section */
 .badge-container {
@@ -542,6 +553,7 @@ footer {
   background: linear-gradient(to right, transparent, rgba(0, 255, 255, 0.3), transparent);
   margin-top: 80px;
 }
+
 
 
 
