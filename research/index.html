@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Research | M4shl3</title>
+
+  <link rel="stylesheet" href="../styles.css" />
+  <link rel="icon" href="../portrait.ico" type="image/x-icon" />
+
+  <style>
+    body {
+      background-color: #000;
+      color: #fff;
+      font-family: 'Courier New', Courier, monospace;
+      margin: 0;
+    }
+
+    .research-container {
+      max-width: 950px;
+      margin: 30px auto;
+      padding: 20px;
+    }
+
+    .research-card {
+      background-color: #111;
+      margin: 20px 0;
+      padding: 25px;
+      border-radius: 12px;
+      border: 2px solid lime;
+      box-shadow: 0 0 8px lime;
+      display: flex;
+      justify-content: space-between;
+      gap: 20px;
+      cursor: pointer;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+
+    .research-card:hover {
+      transform: translateY(-6px);
+      box-shadow: 0 0 14px lime;
+    }
+
+    .research-card img {
+      width: 180px;
+      height: 130px;
+      border-radius: 10px;
+      object-fit: cover;
+      border: 1px solid #333;
+    }
+
+    .research-card-content {
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+    }
+
+    .research-card-content h2 {
+      margin: 0 0 10px;
+      font-size: 18px;
+    }
+
+    .research-card-content p {
+      font-size: 14px;
+      color: #ccc;
+      line-height: 1.6;
+    }
+
+    .meta {
+      margin-top: auto;
+      font-size: 13px;
+      color: #888;
+    }
+
+    .intro-section {
+      text-align: center;
+      margin: 60px auto 40px;
+      max-width: 800px;
+    }
+
+    .intro-section h1 {
+      color: #00ff00;
+      font-size: 2.6rem;
+      margin-bottom: 20px;
+    }
+
+    .intro-section p {
+      color: #ccc;
+      font-size: 1.2rem;
+      line-height: 1.7;
+    }
+  </style>
+</head>
+
+<body>
+
+<header>
+  <div class="container">
+    <div class="logo-terminal" style="position: relative;">
+      <span class="terminal-arrow">➜</span>
+      <span class="terminal-path">~ cd /home/m4shl3</span>
+      <span class="terminal-cursor"></span>
+      <a href="../index.html" class="terminal-link"></a>
+    </div>
+
+    <nav class="menu">
+      <ul>
+        <li><a href="../about.html">About</a></li>
+        <li><a href="../labs.html">Labs</a></li>
+        <li><a href="/research/" class="active">Research</a></li>
+        <li><a href="../tools.html">Tools</a></li>
+      </ul>
+    </nav>
+  </div>
+</header>
+
+<div class="research-container" id="research-container"></div>
+
+
+<script>
+(async () => {
+  const container = document.getElementById('research-container');
+
+  try {
+    const response = await fetch('/research/research.json');
+    if (!response.ok) throw new Error('Failed to load research.json');
+
+    const researchFiles = await response.json();
+
+    researchFiles.forEach(item => {
+      const card = document.createElement('div');
+      card.className = 'research-card';
+      card.onclick = () => window.location.href = item.path;
+
+      card.innerHTML = `
+        <div class="research-card-content">
+          <h2>${item.title}</h2>
+          <p>${item.description}</p>
+          <div class="meta">📅 ${item.date}</div>
+        </div>
+        <img src="${item.thumbnail}" alt="${item.title}">
+      `;
+
+      container.appendChild(card);
+    });
+
+  } catch (err) {
+    container.innerHTML =
+      '<p style="color:red;">Failed to load research entries.</p>';
+    console.error(err);
+  }
+})();
+</script>
+
+</body>
+</html>
