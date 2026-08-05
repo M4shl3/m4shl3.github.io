@@ -1,0 +1,303 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>KapeParser | Tools | M4shl3</title>
+  <link rel="stylesheet" href="../styles.css">
+	<link rel="icon" href="https://m4shl3.github.io/portrait.ico" type="image/x-icon">
+	<style>
+		.tool-hero { display: flex; align-items: center; gap: 18px; margin-bottom: 10px; flex-wrap: wrap; }
+		.tool-hero img { width: 56px; height: 56px; border-radius: 10px; }
+		.tool-hero h1 { font-size: 34px; margin: 0; text-align: left; }
+		.tool-tagline { font-size: 16px; color: #ccc; max-width: 700px; margin: 0 auto 20px; text-align: center; }
+		.exe-pills { display: flex; gap: 10px; justify-content: center; flex-wrap: wrap; margin-bottom: 50px; }
+		.exe-pill {
+			font-size: 13px;
+			padding: 6px 14px;
+			border: 1px solid lime;
+			border-radius: 6px;
+			color: #fff;
+			box-shadow: 0 0 6px rgba(0, 255, 0, 0.4);
+		}
+		.exe-pill.alt { border-color: #00bfff; box-shadow: 0 0 6px rgba(0, 191, 255, 0.4); }
+
+		.tool-section { max-width: 900px; margin: 0 auto; padding: 40px 0; text-align: left; }
+		.tool-section h2 {
+			font-size: 13px;
+			letter-spacing: 0.08em;
+			text-transform: uppercase;
+			color: #00ff00;
+			margin: 0 0 18px;
+			text-align: left;
+		}
+		.tool-section h3 { font-size: 20px; color: #fff; margin: 0 0 12px; text-align: left; }
+		.tool-section p { font-size: 15px; color: #ccc; text-align: left; margin: 0 0 14px; max-width: 700px; }
+
+		.feature-grid {
+			display: grid;
+			grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+			gap: 16px;
+			margin-top: 10px;
+		}
+		.feature-card {
+			border: 1px solid #222;
+			border-radius: 10px;
+			padding: 16px 18px;
+			background: #0a0a0a;
+		}
+		.feature-card .ftitle { color: #00ff00; font-weight: bold; font-size: 14px; margin-bottom: 6px; }
+		.feature-card p { font-size: 13.5px; color: #aaa; margin: 0; }
+
+		.shots-grid {
+			display: grid;
+			grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+			gap: 20px;
+			margin-top: 16px;
+		}
+		.shot-placeholder {
+			aspect-ratio: 16 / 10;
+			border: 1.5px dashed #333;
+			border-radius: 10px;
+			background: #0a0a0a;
+			display: flex;
+			flex-direction: column;
+			align-items: center;
+			justify-content: center;
+			gap: 8px;
+			color: #666;
+			
+			font-size: 13px;
+		}
+		.shot-caption { margin-top: 10px; font-size: 13px; color: #00bfff; text-align: center; }
+
+		.stage-table-wrap { overflow-x: auto; margin-top: 16px; border: 1px solid #222; border-radius: 8px; }
+		table.stages { width: 100%; border-collapse: collapse; font-size: 13.5px; min-width: 560px; }
+		table.stages th, table.stages td { text-align: left; padding: 9px 14px; border-bottom: 1px solid #1a1a1a; white-space: nowrap; }
+		table.stages thead th { background: #0a0a0a; color: #00ff00; font-size: 11px; letter-spacing: 0.05em; text-transform: uppercase; }
+		table.stages tbody tr:hover { background: #0a0a0a; }
+		table.stages tbody tr:last-child td { border-bottom: none; }
+		table.stages td.tool { color: #00bfff; }
+
+		ul.req-list { list-style: none; margin: 16px 0 0; padding: 0; }
+		ul.req-list li { position: relative; padding-left: 22px; margin-bottom: 10px; font-size: 14.5px; color: #ddd; max-width: 700px; }
+		ul.req-list li::before { content: "›"; position: absolute; left: 0; color: #00ff00; font-weight: bold; }
+
+		.downloads-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 16px; margin-top: 16px; }
+		.dl-card { border: 1px solid #222; border-radius: 10px; background: #0a0a0a; padding: 20px; }
+		.dl-card h3 { font-size: 15px; margin-bottom: 6px; }
+		.dl-card p { font-size: 13px; color: #999; margin: 0 0 14px; }
+		.dl-btn {
+			display: inline-block;
+			
+			font-size: 13px;
+			padding: 8px 16px;
+			border: 1px solid lime;
+			border-radius: 6px;
+			color: #fff;
+			text-decoration: none;
+		}
+		.dl-btn:hover { background: rgba(0, 255, 0, 0.08); text-decoration: none; box-shadow: 0 0 8px lime; }
+
+		pre.build-cmds {
+			background: #000;
+			border: 1px solid #222;
+			border-radius: 8px;
+			padding: 16px 18px;
+			overflow-x: auto;
+			
+			font-size: 13px;
+			line-height: 1.7;
+			color: #ddd;
+			margin: 16px 0 0;
+		}
+		pre.build-cmds .prompt { color: #00ff00; }
+		pre.build-cmds .comment { color: #666; }
+
+		.license-note { font-size: 12.5px; color: #666; text-align: center; margin-top: 10px; }
+	</style>
+</head>
+
+<!-- Back to Top Button -->
+<button id="backToTop" class="back-to-top-btn" aria-label="Back to top">
+   ^
+</button>
+
+<body>
+
+	<header>
+	  <div class="container">
+		<div class="logo-terminal" style="position: relative;">
+		  <span class="terminal-arrow">➜</span>
+		  <span class="terminal-path">~ cd /home/m4shl3</span>
+		  <span class="terminal-cursor"></span>
+		  <a href="../index.html" class="terminal-link"></a>
+		</div>
+
+		<nav class="menu">
+		  <ul>
+			<li><a href="../about.html">About</a></li>
+			<li><a href="../labs.html">Labs</a></li>
+			<li><a href="../research/index.html">Research</a></li>
+			<li><a href="../tools.html" class="active">Tools</a></li>
+		  </ul>
+		</nav>
+	  </div>
+	</header>
+
+	<main>
+		<div class="container">
+
+			<div style="text-align:center; padding: 30px 0 0;">
+				<div class="tool-hero" style="justify-content:center;">
+					<img src="kapeparser-icon.png" alt="KapeParser icon">
+					<h1>KapeParser</h1>
+				</div>
+				<p class="tool-tagline">A Windows desktop application for parsing KAPE triage collections — pick a source, run the parsers, browse organized per-artifact output.</p>
+				<div class="exe-pills">
+					<span class="exe-pill">KapeParser.exe</span>
+					<span class="exe-pill alt">KapeResultsBrowser.exe</span>
+				</div>
+			</div>
+
+			<div class="tool-section">
+				<h2>Overview</h2>
+				<h3>What it does</h3>
+				<p>KapeParser replaces a legacy console script with a GUI workflow. Point it at a triage source — a mounted VHDX, a zip archive, or an already-extracted directory — choose which parsers to run, and get organized, searchable CSV and JSON output without leaving the tool.</p>
+				<p>The project is split into two executables sharing one distribution folder: <strong>KapeParser</strong> configures a case and runs the parsing pipeline with live per-stage progress; <strong>KapeResultsBrowser</strong> is a standalone companion for browsing parsed output from any past case, independent of the main tool.</p>
+			</div>
+
+			<div class="tool-section">
+				<h2>Features</h2>
+				<div class="feature-grid">
+					<div class="feature-card">
+						<div class="ftitle">Any evidence source</div>
+						<p>Mounted VHDX, zip archive, or extracted directory — detected from any drive letter, not just C.</p>
+					</div>
+					<div class="feature-card">
+						<div class="ftitle">Batch queueing</div>
+						<p>Queue multiple sources; each is processed sequentially as its own case.</p>
+					</div>
+					<div class="feature-card">
+						<div class="ftitle">Automatic case naming</div>
+						<p>Named from the parsed registry's ComputerName, with a manual override when there is no registry to read.</p>
+					</div>
+					<div class="feature-card">
+						<div class="ftitle">DEFLATE64 zip support</div>
+						<p>Handles Windows' own "Compress to Zip" method, with a 7-Zip fallback and a tar fallback beyond that.</p>
+					</div>
+					<div class="feature-card">
+						<div class="ftitle">Configurable ESE repair</div>
+						<p>Ask, always, or never repair SRUM and Windows Search databases collected in a dirty-shutdown state.</p>
+					</div>
+					<div class="feature-card">
+						<div class="ftitle">Fast, searchable results</div>
+						<p>Per-case tabs, JSON syntax highlighting, and a DuckDB-backed CSV viewer with filtering and highlighted search.</p>
+					</div>
+				</div>
+			</div>
+
+			<div class="tool-section">
+				<h2>Screenshots</h2>
+				<div class="shots-grid">
+					<div>
+						<div class="shot-placeholder">[ screenshot pending: kapeparser-case-setup.png ]</div>
+						<div class="shot-caption">KapeParser — Case Setup</div>
+					</div>
+					<div>
+						<div class="shot-placeholder">[ screenshot pending: kapeparser-results-browser.png ]</div>
+						<div class="shot-caption">Results Browser</div>
+					</div>
+				</div>
+			</div>
+
+			<div class="tool-section">
+				<h2>Parsing stages</h2>
+				<p>A stage is skipped automatically if the artifact it depends on was not present in the triage source.</p>
+				<div class="stage-table-wrap">
+					<table class="stages">
+						<thead><tr><th>Stage</th><th>Tool</th><th>Vendor</th></tr></thead>
+						<tbody>
+							<tr><td>$MFT</td><td class="tool">MFTECmd</td><td>Eric Zimmerman</td></tr>
+							<tr><td>$J / USN Journal</td><td class="tool">MFTECmd</td><td>Eric Zimmerman</td></tr>
+							<tr><td>$LogFile correlation</td><td class="tool">NTFS Log Tracker</td><td>Junghoon Oh</td></tr>
+							<tr><td>Registry hives</td><td class="tool">RegRipper</td><td>RegRipper project</td></tr>
+							<tr><td>Event logs</td><td class="tool">EvtxECmd</td><td>Eric Zimmerman</td></tr>
+							<tr><td>Event-Ripper (legacy EVT/EVTX)</td><td class="tool">LogParser, erip, evtxparse</td><td>Microsoft / Event-Ripper</td></tr>
+							<tr><td>Logon summary</td><td class="tool">Hayabusa</td><td>Yamato Security</td></tr>
+							<tr><td>Amcache</td><td class="tool">AmcacheParser</td><td>Eric Zimmerman</td></tr>
+							<tr><td>Prefetch</td><td class="tool">PECmd</td><td>Eric Zimmerman</td></tr>
+							<tr><td>LNK files</td><td class="tool">LECmd</td><td>Eric Zimmerman</td></tr>
+							<tr><td>Jump Lists</td><td class="tool">JLECmd</td><td>Eric Zimmerman</td></tr>
+							<tr><td>SRUM</td><td class="tool">SrumECmd</td><td>Eric Zimmerman</td></tr>
+							<tr><td>Windows Search</td><td class="tool">sidr</td><td>sidr project</td></tr>
+							<tr><td>USB devices</td><td class="tool">parseUSBs</td><td>Kathryn Hedley</td></tr>
+							<tr><td>Defender DetectionHistory</td><td class="tool">wddh</td><td>wddh project</td></tr>
+							<tr><td>Defender support strings</td><td class="tool">Sysinternals strings</td><td>Microsoft / Sysinternals</td></tr>
+						</tbody>
+					</table>
+				</div>
+			</div>
+
+			<div class="tool-section">
+				<h2>Requirements</h2>
+				<ul class="req-list">
+					<li>Windows 10 or later. Most stages read live registry hives, the MFT, or repair ESE databases — the compiled executable requests administrator elevation automatically.</li>
+					<li>The third-party tools listed above, present under a <code>Tools\</code> folder next to the application. Not included in the source-only download; each is under its own license.</li>
+					<li>Python 3.11 or later — only if running from source instead of the compiled executable.</li>
+				</ul>
+			</div>
+
+			<div class="tool-section">
+				<h2>Download</h2>
+				<div class="downloads-grid">
+					<div class="dl-card">
+						<h3>Source only</h3>
+						<p>Application source code, no third-party tools included.</p>
+						<a href="#" class="dl-btn">Download — Source Only</a>
+					</div>
+					<div class="dl-card">
+						<h3>Full package</h3>
+						<p>Includes the Tools\ folder — ready to run without a separate download step.</p>
+						<a href="#" class="dl-btn">Download — Full Package</a>
+					</div>
+				</div>
+			</div>
+
+			<div class="tool-section">
+				<h2>Build from source</h2>
+				<p>Both executables build from one spec into a shared distribution folder.</p>
+				<pre class="build-cmds"><span class="comment"># from the app\ folder</span>
+<span class="prompt">&gt;</span> .venv\Scripts\pip install -e ".[dev]"
+<span class="prompt">&gt;</span> .venv\Scripts\pyinstaller packaging\pyinstaller.spec
+
+<span class="comment"># if rebuilding, clear both caches first</span>
+<span class="prompt">&gt;</span> rmdir /s /q build
+<span class="prompt">&gt;</span> rmdir /s /q dist</pre>
+				<p class="license-note">No license chosen yet — all rights reserved by the author. Third-party tools remain under their own licenses.</p>
+			</div>
+
+		</div>
+	</main>
+
+	<footer>
+		<div class="container">
+			<p>&copy; 2025 M4shl3 | Tools | KapeParser</p>
+		</div>
+	</footer>
+
+	<div id="back-to-top" class="back-to-top"></div>
+
+	<script>
+		const backToTop = document.getElementById('backToTop');
+		window.addEventListener('scroll', () => {
+			if (window.scrollY > 300) { backToTop.classList.add('show'); }
+			else { backToTop.classList.remove('show'); }
+		});
+		backToTop.addEventListener('click', () => {
+			window.scrollTo({ top: 0, behavior: 'smooth' });
+		});
+	</script>
+
+</body>
+</html>
