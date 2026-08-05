@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Tools | M4shl3</title>
+  <link rel="stylesheet" href="styles.css">
+	<link rel="icon" href="https://m4shl3.github.io/portrait.ico" type="image/x-icon">
+	<style>
+		.tools-grid {
+			display: grid;
+			grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+			gap: 25px;
+			justify-content: center;
+			width: 100%;
+			max-width: 1200px;
+			margin: 0 auto;
+		}
+		.tool-card {
+			position: relative;
+			display: block;
+			overflow: hidden;
+			border-radius: 12px;
+			background: #000;
+			box-shadow: 0 4px 8px rgba(0,0,0,0.6);
+			transition: transform 0.3s ease;
+			padding: 24px;
+			text-align: left;
+			text-decoration: none;
+		}
+		.tool-card::before {
+			content: '';
+			position: absolute;
+			top: 0; left: 0; right: 0; bottom: 0;
+			border-radius: 12px;
+			border: 2px solid lime;
+			box-shadow: 0 0 8px lime;
+			pointer-events: none;
+			z-index: 2;
+		}
+		.tool-card:hover { transform: scale(1.02); }
+		.tool-card-header { display: flex; align-items: center; gap: 14px; margin-bottom: 12px; }
+		.tool-card-header img { width: 40px; height: 40px; border-radius: 8px; }
+		.tool-card-name { font-size: 18px; font-weight: bold; color: #fff; }
+		.tool-card-tagline { font-size: 13px; color: #ccc; margin: 0 0 14px; line-height: 1.5; }
+		.tool-card-tags { display: flex; gap: 8px; flex-wrap: wrap; }
+		.tool-tag {
+			font-size: 11px;
+			padding: 3px 8px;
+			border: 1px solid #00bfff;
+			color: #00bfff;
+			border-radius: 4px;
+		}
+		.tools-intro { max-width: 760px; margin: 0 auto 40px; text-align: center; }
+		.tools-intro p { font-size: 16px; color: #ccc; }
+	</style>
+</head>
+
+<!-- Back to Top Button -->
+<button id="backToTop" class="back-to-top-btn" aria-label="Back to top">
+   ^
+</button>
+
+<body>
+
+	<header>
+	  <div class="container">
+		<!-- Terminal-style logo -->
+		<div class="logo-terminal" style="position: relative;">
+		  <span class="terminal-arrow">➜</span>
+		  <span class="terminal-path">~ cd /home/m4shl3</span>
+		  <span class="terminal-cursor"></span>
+		  <!-- Hidden clickable overlay -->
+		  <a href="index.html" class="terminal-link"></a>
+		</div>
+
+		<!-- Navigation menu -->
+		<nav class="menu">
+		  <ul>
+			<li><a href="about.html">About</a></li>
+			<li><a href="labs.html">Labs</a></li>
+			<li><a href="research/index.html">Research</a></li>
+			<li><a href="tools.html" class="active">Tools</a></li>
+		  </ul>
+		</nav>
+	  </div>
+	</header>
+
+	<main>
+		<div class="container">
+
+			<div class="tools-grid" style="margin-top: 40px;">
+				<a href="tools/kapeparser.html" class="tool-card">
+					<div class="tool-card-header">
+						<img src="tools/kapeparser-icon.png" alt="KapeParser icon">
+						<span class="tool-card-name">KapeParser</span>
+					</div>
+					<p class="tool-card-tagline">A Windows GUI for parsing KAPE triage collections, with a standalone results browser companion.</p>
+					<div class="tool-card-tags">
+						<span class="tool-tag">Windows</span>
+						<span class="tool-tag">DFIR triage</span>
+						<span class="tool-tag">Python / PySide6</span>
+					</div>
+				</a>
+			</div>
+
+		</div>
+	</main>
+
+	<footer>
+		<div class="container"></div>
+	</footer>
+
+	<div id="back-to-top" class="back-to-top"></div>
+
+	<script>
+		const backToTop = document.getElementById('backToTop');
+		window.addEventListener('scroll', () => {
+			if (window.scrollY > 300) { backToTop.classList.add('show'); }
+			else { backToTop.classList.remove('show'); }
+		});
+		backToTop.addEventListener('click', () => {
+			window.scrollTo({ top: 0, behavior: 'smooth' });
+		});
+	</script>
+
+</body>
+</html>
