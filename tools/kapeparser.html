@@ -228,14 +228,6 @@
 			<div class="tool-section">
 			    <h2>Download</h2>
 			    <div class="downloads-grid">
-			        <!-- Source only card -->
-			        <div class="dl-card">
-			            <h3>Source only</h3>
-			            <p>Application source code, no third-party tools included.</p>
-			            <!-- 👇 Replace href="#" with your actual download link -->
-			            <a href="#" class="dl-btn">Download — Source Only</a>
-			        </div>
-			        <!-- Full package card -->
 			        <div class="dl-card">
 			            <h3>Full package</h3>
 			            <p>Includes the Tools\ folder — ready to run without a separate download step.</p>
@@ -243,18 +235,6 @@
 			            <a href="#" class="dl-btn">Download — Full Package</a>
 			        </div>
 			    </div>
-			</div>
-
-			<div class="tool-section">
-				<h2>Build from source</h2>
-				<p>Both executables build from one spec into a shared distribution folder.</p>
-				<pre class="build-cmds"><span class="comment"># from the app\ folder</span>
-<span class="prompt">&gt;</span> .venv\Scripts\pip install -e ".[dev]"
-<span class="prompt">&gt;</span> .venv\Scripts\pyinstaller packaging\pyinstaller.spec
-
-<span class="comment"># if rebuilding, clear both caches first</span>
-<span class="prompt">&gt;</span> rmdir /s /q build
-<span class="prompt">&gt;</span> rmdir /s /q dist</pre>
 			</div>
 
 		</div>
